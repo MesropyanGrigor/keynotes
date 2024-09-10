@@ -10,7 +10,7 @@
 
 - Domain-Driven Design (DDD): the structure of your code should map to the structure of the problem domain 
 
-<<
+```
 A: Your team is creating software that must support only a few users at first. The number of users will increase substantially later. Which base design should you use and why?
 
 Q: Use an agile incremental design because you can deploy something quickly and add more functionality later, as the user base increases.
@@ -19,7 +19,7 @@ Q: Use an agile incremental design because you can deploy something quickly and 
 Q: How does agile software development differ from siloed software development, and what advantage does this provide?
 
 A: You work on thin, vertical slices compared to completely isolated and segmented parts, reducing development delays.
->>
+```
 
 
 
@@ -29,16 +29,37 @@ A: You work on thin, vertical slices compared to completely isolated and segment
 - when you understand the problem you can solve it, User Story: Describes your user work
 - (Example: Need a way to submit comments about their articals and authors need a way to respond)
 - Next step is refine the user story, helpful to use UML
-- 
 
-<<
+
+```
 Q: You are to begin the development of an architecture for an accounting system. How should you approach writing the problem statement for this project?
 
 A: Describe the end user’s problem and the solution to this problem in the same way an accountant would.
->>
+```
 
 **Broad Architecural Patterns**
 
 Monolith - is a one larg executable unit, 100 000 lines, Test and Deploy monolith is not trival task
 Microkernel (plugin) architecture - Kernel and sum other services
 
+Microservices requirements: 
+    - small(few hundread lines of source code)
+    - must be independently deployable
+    - Fully autonomous (should have their own database)
+    - hide implementation details
+    - distributed (Should work unreliable environment)
+    - highly observable (it should be monitored, they log everything they do)
+
+    - main problem how services communicate each others
+        - making http server, where they will talk each other by rest like protocol
+        - messaging each other instead of http
+
+    drawbacks
+        - Design and runtime complexity
+        - networks are slow compared to alternatives
+
+```
+Q: For years, your business has used a monolithic system that still works well enough but has become very complex. From a money-saving perspective, what should you do and why?
+
+A: Replace the system immediately with a less monolithic system because your business will save money in the long-run.
+```
